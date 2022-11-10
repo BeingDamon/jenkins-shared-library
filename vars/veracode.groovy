@@ -1,4 +1,5 @@
-void staticCodeAnalysis(String applicationName, String canJobFail){
+#!/usr/bin/env groovy
+def call(String applicationName, String canJobFail){
     String buildName = getBuildName()
     withCredentials([[$class: 'usernamePassword', credentialsId: Constants.veracode_credID, usernameVariable: 'USERNAME', passwordVariable: 'token']]) {
     sh"""
@@ -20,4 +21,5 @@ void staticCodeAnalysis(String applicationName, String canJobFail){
         vkey: '${VERACODE_ESCM_KEY}',
         waitForScan: 'true'
     """
+}
 }

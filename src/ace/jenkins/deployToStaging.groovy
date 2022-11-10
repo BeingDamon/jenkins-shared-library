@@ -1,3 +1,0 @@
-void deployToStaging(){
-    kubeConfigStaging = credentials("")
-}
