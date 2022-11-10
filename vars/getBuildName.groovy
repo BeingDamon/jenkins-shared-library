@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call{
+def call(){
     def buildName = currentBuild.buildName
     return buildName
 }
