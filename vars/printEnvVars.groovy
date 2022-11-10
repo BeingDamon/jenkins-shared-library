@@ -1,5 +1,8 @@
 #!/usr/bin/env groovy
 
-void printEnvVars(){
-    sh "print env | sort"
+
+def call(){
+    def envVars = sh "print env | sort"
+    echo "$envVars"
 }
+
