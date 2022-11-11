@@ -1,4 +1,4 @@
  def call(String name, String surName){
-    def helloWorld = "Hello!! greetings $name"
+    def helloWorld = "Hello!! greetings $name $surName"
     return helloWorld
  }
