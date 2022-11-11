@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 def call(String applicationName, String canJobFail){
-    String buildName = getBuildName()
+    currentBuildName = setBuildName("1", "0")
     withCredentials([[$class: 'usernamePassword', credentialsId: Constants.veracode_credID, usernameVariable: 'USERNAME', passwordVariable: 'token']]) {
     sh"""
         veracode applicationName: "${applicationName}",
@@ -14,7 +14,7 @@ def call(String applicationName, String canJobFail){
         scanIncludesPattern: '',
         uploadExcludesPattern: '',
         uploadIncludesPattern: '',
-        scanName: "${buildName}",
+        scanName: "${currentBuildName}",
         team: 'ACE',
         timeout: '60',
         vid: '${VERACODE_ESCM_ID}',
