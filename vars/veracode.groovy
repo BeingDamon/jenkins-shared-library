@@ -21,5 +21,5 @@ def call(String applicationName, String canJobFail){
         vkey: '${VERACODE_ESCM_KEY}',
         waitForScan: 'true'
     """
-}
+    }
 }
